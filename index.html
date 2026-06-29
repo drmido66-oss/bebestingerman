@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bebestingerman - Learn German Online</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇩🇪</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-german-blue" data-key="brandName">bebestingerman</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="text-gray-600 hover:text-german-red transition duration-200" data-key="navHome">Home</a>
+                <a href="#courses" class="text-gray-600 hover:text-german-red transition duration-200" data-key="navCourses">Courses</a>
+                <a href="#about" class="text-gray-600 hover:text-german-red transition duration-200" data-key="navAbout">About Us</a>
+                <a href="#teacher" class="text-gray-600 hover:text-german-red transition duration-200" data-key="navTeacher">Teacher</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-german-red transition duration-200" data-key="navTestimonials">Testimonials</a>
+                <a href="#faq" class="text-gray-600 hover:text-german-red transition duration-200" data-key="navFAQ">FAQ</a>
+                <a href="#blog" class="text-gray-600 hover:text-german-red transition duration-200" data-key="navBlog">Blog</a>
+                <a href="#contact" class="text-gray-600 hover:text-german-red transition duration-200" data-key="navContact">Contact</a>
+                <div class="relative inline-block text-left">
+                    <button id="lang-switcher-btn" type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-german-blue">
+                        <span id="current-lang-display">EN</span>
+                        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                    <div id="lang-switcher-dropdown" class="origin-top-right absolute right-0 mt-2 w-24 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu">
+                        <div class="py-1" role="none">
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" data-lang-code="ru">Русский</button>
+                            <button class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem" data-lang-code="en">English</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="bg-german-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition duration-300" data-key="ctaEnroll">Enroll Now</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none" aria-label="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg hidden">
+            <nav class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-german-blue hover:bg-gray-50" data-key="navHome">Home</a>
+                <a href="#courses" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-german-blue hover:bg-gray-50" data-key="navCourses">Courses</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-german-blue hover:bg-gray-50" data-key="navAbout">About Us</a>
+                <a href="#teacher" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-german-blue hover:bg-gray-50" data-key="navTeacher">Teacher</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-german-blue hover:bg-gray-50" data-key="navTestimonials">Testimonials</a>
+                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-german-blue hover:bg-gray-50" data-key="navFAQ">FAQ</a>
+                <a href="#blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-german-blue hover:bg-gray-50" data-key="navBlog">Blog</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-german-blue hover:bg-gray-50" data-key="navContact">Contact</a>
+                <a href="#contact" class="block w-full text-center bg-german-red text-white px-3 py-2 rounded-md text-base font-medium hover:bg-red-700 transition duration-300 mt-2" data-key="ctaEnroll">Enroll Now</a>
+                <div class="px-3 py-2 flex justify-center space-x-4">
+                    <button class="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-md" data-lang-code="ru">Русский</button>
+                    <button class="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-md" data-lang-code="en">English</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-cover bg-center h-[600px] flex items-center" style="background-image: url('https://images.unsplash.com/photo-1543168256-4188115769f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80');">
+        <div class="absolute inset-0 bg-german-blue opacity-70"></div>
+        <div class="container mx-auto px-4 text-center relative z-10 text-white">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4" data-key="heroHeadline">Learn German with an Experienced Teacher</h1>
+            <p class="text-xl md:text-2xl mb-8" data-key="heroSubheadline">Conversational German, preparation for Goethe and TestDaF exams, medical and business German for Russian-speaking students.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-german-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition duration-300" data-key="heroCtaTrial">Book a Trial Lesson</a>
+                <a href="#contact" class="bg-white text-german-blue px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300" data-key="heroCtaConsultation">Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="about" class="py-16 bg-german-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-german-blue mb-12" data-key="aboutTitle">Why Choose bebestingerman?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center"><div class="text-german-red text-5xl mb-4">💡</div><h3 class="text-xl font-semibold mb-2" data-key="whyChoose1">Individual Approach</h3></div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center"><div class="text-german-red text-5xl mb-4">💻</div><h3 class="text-xl font-semibold mb-2" data-key="whyChoose2">Online Learning</h3></div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center"><div class="text-german-red text-5xl mb-4">👨‍🏫</div><h3 class="text-xl font-semibold mb-2" data-key="whyChoose3">Over 15 Years of Teaching Experience</h3></div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center"><div class="text-german-red text-5xl mb-4">🎓</div><h3 class="text-xl font-semibold mb-2" data-key="whyChoose4">Preparation for International Exams</h3></div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center"><div class="text-german-red text-5xl mb-4">⏰</div><h3 class="text-xl font-semibold mb-2" data-key="whyChoose5">Flexible Schedule</h3></div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center"><div class="text-german-red text-5xl mb-4">📚</div><h3 class="text-xl font-semibold mb-2" data-key="whyChoose6">Modern Teaching Methods</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Process -->
+    <section id="learning-process" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-german-blue mb-12" data-key="processTitle">Our Learning Process</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex items-start bg-german-gray p-6 rounded-lg shadow-lg">
+                    <div class="text-german-red text-4xl mr-4">1.</div>
+                    <div><h3 class="text-xl font-semibold text-german-blue mb-2" data-key="processStep1Title">Free Assessment</h3><p class="text-gray-700" data-key="processStep1Desc">Start with an assessment of your current German level so we can create the perfect learning plan.</p></div>
+                </div>
+                <div class="flex items-start bg-german-gray p-6 rounded-lg shadow-lg">
+                    <div class="text-german-red text-4xl mr-4">2.</div>
+                    <div><h3 class="text-xl font-semibold text-german-blue mb-2" data-key="processStep2Title">Personalized Learning Plan</h3><p class="text-gray-700" data-key="processStep2Desc">We will develop an individual learning plan tailored to your goals and pace.</p></div>
+                </div>
+                <div class="flex items-start bg-german-gray p-6 rounded-lg shadow-lg">
+                    <div class="text-german-red text-4xl mr-4">3.</div>
+                    <div><h3 class="text-xl font-semibold text-german-blue mb-2" data-key="processStep3Title">Interactive Online Lessons</h3><p class="text-gray-700" data-key="processStep3Desc">Participate in engaging and effective online lessons with an experienced teacher.</p></div>
+                </div>
+                <div class="flex items-start bg-german-gray p-6 rounded-lg shadow-lg">
+                    <div class="text-german-red text-4xl mr-4">4.</div>
+                    <div><h3 class="text-xl font-semibold text-german-blue mb-2" data-key="processStep4Title">Regular Progress Evaluation</h3><p class="text-gray-700" data-key="processStep4Desc">Track your progress with regular check-ins and feedback.</p></div>
+                </div>
+                <div class="flex items-start bg-german-gray p-6 rounded-lg shadow-lg">
+                    <div class="text-german-red text-4xl mr-4">5.</div>
+                    <div><h3 class="text-xl font-semibold text-german-blue mb-2" data-key="processStep5Title">Exam Preparation &amp; Certification Support</h3><p class="text-gray-700" data-key="processStep5Desc">Receive support for preparing for international exams and certification.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-german-blue mb-12" data-key="coursesTitle">Our German Language Courses</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-german-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-german-blue mb-3" data-key="courseA1Title">Conversational German</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+                        <li data-key="courseA1Bullet1">Everyday communication</li>
+                        <li data-key="courseA1Bullet2">Speaking confidence</li>
+                        <li data-key="courseA1Bullet3">Listening and pronunciation</li>
+                    </ul>
+                    <a href="#contact" class="text-german-red hover:underline font-semibold" data-key="learnMore">Learn More →</a>
+                </div>
+                <div class="bg-german-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-german-blue mb-3" data-key="courseB1Title">Goethe Zertifikat Preparation</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+                        <li data-key="courseB1Bullet1">A1–C2 levels</li>
+                        <li data-key="courseB1Bullet2">Exam strategies</li>
+                        <li data-key="courseB1Bullet3">Practice tests</li>
+                    </ul>
+                    <a href="#contact" class="text-german-red hover:underline font-semibold" data-key="learnMore">Learn More →</a>
+                </div>
+                <div class="bg-german-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-german-blue mb-3" data-key="courseC1Title">TestDaF Preparation</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+                        <li data-key="courseC1Bullet1">Academic German</li>
+                        <li data-key="courseC1Bullet2">University admission preparation</li>
+                        <li data-key="courseC1Bullet3">Exam simulation</li>
+                    </ul>
+                    <a href="#contact" class="text-german-red hover:underline font-semibold" data-key="learnMore">Learn More →</a>
+                </div>
+                <div class="bg-german-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-german-blue mb-3" data-key="courseD1Title">Business German</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+                        <li data-key="courseD1Bullet1">Professional communication</li>
+                        <li data-key="courseD1Bullet2">Business correspondence</li>
+                        <li data-key="courseD1Bullet3">Presentations and meetings</li>
+                    </ul>
+                    <a href="#contact" class="text-german-red hover:underline font-semibold" data-key="learnMore">Learn More →</a>
+                </div>
+                <div class="bg-german-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-german-blue mb-3" data-key="courseE1Title">Medical German</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
+                        <li data-key="courseE1Bullet1">German for doctors and healthcare professionals</li>
+                        <li data-key="courseE1Bullet2">Fachsprache Medizin</li>
+                        <li data-key="courseE1Bullet3">Medical terminology</li>
+                        <li data-key="courseE1Bullet4">Communication with patients and colleagues</li>
+                    </ul>
+                    <a href="#contact" class="text-german-red hover:underline font-semibold" data-key="learnMore">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher -->
+    <section id="teacher" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-german-blue mb-12" data-key="teacherTitle">About The Teacher</h2>
+            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+                <div class="lg:w-1/3 flex-shrink-0">
+                    <img src="https://via.placeholder.com/400x400?text=Teacher+Portrait" alt="Professional portrait of the teacher" class="rounded-full w-64 h-64 object-cover mx-auto lg:mx-0 shadow-lg mb-6">
+                    <p class="text-center lg:text-left text-xl font-semibold text-german-blue" data-key="teacherName">Teacher's Name</p>
+                </div>
+                <div class="lg:w-2/3">
+                    <ul class="list-disc list-inside text-gray-700 space-y-3 text-lg">
+                        <li data-key="teacherProfile1">Graduate of Al-Alsun Faculty of Languages, Ain Shams University (German Department)</li>
+                        <li data-key="teacherProfile2">Postgraduate Diploma in Education and Teaching</li>
+                        <li data-key="teacherProfile3">Pre-Master Studies in Applied German Linguistics</li>
+                        <li data-key="teacherProfile4">Currently conducting research in Pragmatic Linguistics</li>
+                        <li data-key="teacherProfile5">More than 15 years of teaching experience</li>
+                        <li data-key="teacherProfile6">Former German teacher in schools and language centers</li>
+                        <li data-key="teacherProfile7">German online instructor for Russian and Ukrainian students</li>
+                        <li data-key="teacherProfile8">English-German translator and proofreader</li>
+                        <li data-key="teacherProfile9">German audio transcription specialist</li>
+                        <li data-key="teacherProfile10">German proficiency level C1</li>
+                        <li data-key="teacherProfile11">Professional training from Goethe Institute</li>
+                        <li data-key="teacherProfile12">Specialized teacher training in German language instruction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="py-16 bg-german-blue text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12" data-key="audienceTitle">Who Are Our Courses For?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-lg bg-white bg-opacity-10">
+                    <h3 class="text-xl font-semibold mb-2" data-key="audience1Title">Russian-Speaking Adults</h3>
+                    <p class="text-gray-200" data-key="audience1Desc">Start or continue learning German with comfort and efficiency.</p>
+                </div>
+                <div class="p-6 rounded-lg bg-white bg-opacity-10">
+                    <h3 class="text-xl font-semibold mb-2" data-key="audience2Title">Ukrainian Students</h3>
+                    <p class="text-gray-200" data-key="audience2Desc">Support and adaptation for successful integration and study in a German-speaking environment.</p>
+                </div>
+                <div class="p-6 rounded-lg bg-white bg-opacity-10">
+                    <h3 class="text-xl font-semibold mb-2" data-key="audience3Title">University Students</h3>
+                    <p class="text-gray-200" data-key="audience3Desc">Preparation for admission and successful studies at universities in Germany, Austria, Switzerland.</p>
+                </div>
+                <div class="p-6 rounded-lg bg-white bg-opacity-10">
+                    <h3 class="text-xl font-semibold mb-2" data-key="audience4Title">Professionals</h3>
+                    <p class="text-gray-200" data-key="audience4Desc">Develop language skills for work and career in German-speaking countries.</p>
+                </div>
+                <div class="p-6 rounded-lg bg-white bg-opacity-10">
+                    <h3 class="text-xl font-semibold mb-2" data-key="audience5Title">Medical Professionals</h3>
+                    <p class="text-gray-200" data-key="audience5Desc">Specialized courses for certification and work in German clinics.</p>
+                </div>
+                <div class="p-6 rounded-lg bg-white bg-opacity-10">
+                    <h3 class="text-xl font-semibold mb-2" data-key="audience6Title">Business Professionals</h3>
+                    <p class="text-gray-200" data-key="audience6Desc">Improve your business communication skills for international business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 bg-german-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-german-blue mb-12" data-key="testimonialsTitle">Student Testimonials</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-700 italic mb-4" data-key="testimonial1Text">"Thanks to bebestingerman, I not only improved my German but also successfully passed Goethe B2. The teacher is very attentive and explains everything clearly!"</p>
+                    <p class="font-semibold text-german-blue" data-key="testimonial1Author">— Anna, student from Russia</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-700 italic mb-4" data-key="testimonial2Text">"Online lessons are very convenient, especially for me as a Ukrainian student. I feel much more confident communicating in German."</p>
+                    <p class="font-semibold text-german-blue" data-key="testimonial2Author">— Olga, student from Ukraine</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-700 italic mb-4" data-key="testimonial3Text">"I moved to Germany for work, and the business German courses were simply indispensable. Now I communicate freely with colleagues and partners."</p>
+                    <p class="font-semibold text-german-blue" data-key="testimonial3Author">— Maxim, IT Specialist</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-700 italic mb-4" data-key="testimonial4Text">"Medical German is very specific, but here they helped me understand all the nuances. Now I'm ready to work in a German clinic!"</p>
+                    <p class="font-semibold text-german-blue" data-key="testimonial4Author">— Elena, Doctor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-german-blue mb-12" data-key="faqTitle">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="border border-gray-200 rounded-lg shadow-sm">
+                    <button class="w-full text-left p-5 font-semibold text-lg flex justify-between items-center focus:outline-none faq-toggle">
+                        <span data-key="faqQ1">How long does it take to learn German?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="px-5 pb-5 text-gray-700 hidden faq-answer" data-key="faqA1">The time it takes to learn depends on your goals, lesson intensity, and starting level. Typically, reaching a basic level (A1-A2) takes a few months, while fluent proficiency (B2-C1) can take a year or more.</div>
+                </div>
+                <div class="border border-gray-200 rounded-lg shadow-sm">
+                    <button class="w-full text-left p-5 font-semibold text-lg flex justify-between items-center focus:outline-none faq-toggle">
+                        <span data-key="faqQ2">How are online classes conducted?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="px-5 pb-5 text-gray-700 hidden faq-answer" data-key="faqA2">Classes are conducted via popular online platforms (e.g., Zoom, Skype) in real-time. You receive interactive lessons, materials, and homework, as well as direct feedback from the teacher.</div>
+                </div>
+                <div class="border border-gray-200 rounded-lg shadow-sm">
+                    <button class="w-full text-left p-5 font-semibold text-lg flex justify-between items-center focus:outline-none faq-toggle">
+                        <span data-key="faqQ3">Which exams can I prepare for?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="px-5 pb-5 text-gray-700 hidden faq-answer" data-key="faqA3">We offer preparation for international exams such as Goethe-Zertifikat (all levels from A1 to C2) and TestDaF, as well as other specialized exams upon request.</div>
+                </div>
+                <div class="border border-gray-200 rounded-lg shadow-sm">
+                    <button class="w-full text-left p-5 font-semibold text-lg flex justify-between items-center focus:outline-none faq-toggle">
+                        <span data-key="faqQ4">Can beginners join?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="px-5 pb-5 text-gray-700 hidden faq-answer" data-key="faqA4">Yes, of course! We have courses for students of all levels, including absolute beginners. We will help you start from the very basics.</div>
+                </div>
+                <div class="border border-gray-200 rounded-lg shadow-sm">
+                    <button class="w-full text-left p-5 font-semibold text-lg flex justify-between items-center focus:outline-none faq-toggle">
+                        <span data-key="faqQ5">Are individual lessons available?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="px-5 pb-5 text-gray-700 hidden faq-answer" data-key="faqA5">Yes, we offer individual lessons, fully adapted to your needs and schedule. This is the most effective way to quickly achieve your goals.</div>
+                </div>
+                <div class="border border-gray-200 rounded-lg shadow-sm">
+                    <button class="w-full text-left p-5 font-semibold text-lg flex justify-between items-center focus:outline-none faq-toggle">
+                        <span data-key="faqQ6">What are the lesson prices?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="px-5 pb-5 text-gray-700 hidden faq-answer" data-key="faqA6">Lesson prices depend on the format (individual or group), duration, and chosen package. Please contact us for detailed information and a personalized offer.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="py-16 bg-german-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-german-blue mb-12" data-key="blogTitle">Our Blog</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-german-blue mb-3" data-key="blogPost1Title">How to Prepare for Goethe Exams</h3>
+                    <p class="text-gray-700 mb-4" data-key="blogPost1Desc">Tips and strategies for successfully passing all levels of Goethe-Zertifikat.</p>
+                    <a href="#contact" class="text-german-red hover:underline font-semibold" data-key="readMore">Read More →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-german-blue mb-3" data-key="blogPost2Title">Living and Studying in Germany: A Complete Guide</h3>
+                    <p class="text-gray-700 mb-4" data-key="blogPost2Desc">Everything you need to know about moving, adapting, and education in Germany.</p>
+                    <a href="#contact" class="text-german-red hover:underline font-semibold" data-key="readMore">Read More →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-german-blue mb-3" data-key="blogPost3Title">Top 5 German Grammar Tips</h3>
+                    <p class="text-gray-700 mb-4" data-key="blogPost3Desc">Simplify learning complex German grammar with our life hacks.</p>
+                    <a href="#contact" class="text-german-red hover:underline font-semibold" data-key="readMore">Read More →</a>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-german-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition duration-300" data-key="viewAllBlog">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-german-red text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-key="ctaMainTitle">Ready to Start Your German Journey?</h2>
+            <p class="text-xl md:text-2xl mb-10" data-key="ctaMainSubTitle">Join bebestingerman today and unlock new opportunities!</p>
+            <div class="max-w-xl mx-auto mb-10">
+                <h3 class="text-3xl font-bold mb-6" data-key="contactUsTitle">Contact Us</h3>
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <a href="https://wa.me/1234567890" target="_blank" class="flex items-center bg-white text-german-blue px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300 shadow-lg">
+                        <i class="fab fa-whatsapp mr-3"></i> <span data-key="contactWhatsapp">WhatsApp</span>
+                    </a>
+                    <a href="https://t.me/yourtelegram" target="_blank" class="flex items-center bg-white text-german-blue px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300 shadow-lg">
+                        <i class="fab fa-telegram-plane mr-3"></i> <span data-key="contactTelegram">Telegram</span>
+                    </a>
+                    <a href="mailto:info@bebestingerman.com" class="flex items-center bg-white text-german-blue px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300 shadow-lg">
+                        <i class="fas fa-envelope mr-3"></i> <span data-key="contactEmail">Email</span>
+                    </a>
+                </div>
+                <p class="text-xl mb-6" data-key="contactOrFillForm">Or fill out the form below and we'll get back to you:</p>
+                <form class="bg-white p-8 rounded-lg shadow-xl text-gray-800 text-left">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2" data-key="formNameLabel">Name:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name" data-key="formNamePlaceholder">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2" data-key="formEmailLabel">Email:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="your@email.com" data-key="formEmailPlaceholder">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2" data-key="formMessageLabel">Message:</label>
+                        <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message" data-key="formMessagePlaceholder"></textarea>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="bg-german-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" data-key="formSubmitButton">Send</button>
+                    </div>
+                </form>
+                <div class="mt-10">
+                    <h3 class="text-3xl font-bold mb-4" data-key="placementTestTitle">Free Placement Test</h3>
+                    <p class="text-xl mb-6" data-key="placementTestDesc">Not sure where to start? Take our free German language level placement test!</p>
+                    <a href="#contact" class="bg-white text-german-blue px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300 shadow-lg" data-key="placementTestButton">Take the Test</a>
+                </div>
+                <div class="mt-10">
+                    <h3 class="text-3xl font-bold mb-4" data-key="newsletterTitle">Subscribe to Our Newsletter</h3>
+                    <p class="text-xl mb-6" data-key="newsletterDesc">Receive useful materials, news, and special offers directly to your inbox.</p>
+                    <form class="flex flex-col sm:flex-row justify-center gap-4">
+                        <input type="email" placeholder="Your email" class="px-6 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-german-blue" data-key="newsletterPlaceholder">
+                        <button type="submit" class="bg-white text-german-blue px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300" data-key="newsletterButton">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-german-blue text-white py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4" data-key="footerBrand">bebestingerman</h3>
+                <p class="text-gray-300" data-key="footerDescription">Your reliable partner in learning German. Discover a world of new opportunities with us.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4" data-key="footerLinks">Quick Links</h3>
+                <ul>
+                    <li><a href="#home" class="text-gray-300 hover:text-white transition duration-200" data-key="navHome">Home</a></li>
+                    <li><a href="#courses" class="text-gray-300 hover:text-white transition duration-200" data-key="navCourses">Courses</a></li>
+                    <li><a href="#about" class="text-gray-300 hover:text-white transition duration-200" data-key="navAbout">About Us</a></li>
+                    <li><a href="#teacher" class="text-gray-300 hover:text-white transition duration-200" data-key="navTeacher">Teacher</a></li>
+                    <li><a href="#testimonials" class="text-gray-300 hover:text-white transition duration-200" data-key="navTestimonials">Testimonials</a></li>
+                    <li><a href="#faq" class="text-gray-300 hover:text-white transition duration-200" data-key="navFAQ">FAQ</a></li>
+                    <li><a href="#blog" class="text-gray-300 hover:text-white transition duration-200" data-key="navBlog">Blog</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-white transition duration-200" data-key="navContact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4" data-key="footerContact">Contact</h3>
+                <p class="text-gray-300" data-key="contactEmailFooter">Email: info@bebestingerman.com</p>
+                <p class="text-gray-300" data-key="contactPhoneFooter">Phone: +123 456 7890</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-gray-400 mt-8">
+            <p data-key="footerCopyright">© 2023 bebestingerman. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/1234567890" target="_blank" class="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+    <a href="#contact" class="fixed bottom-20 right-4 bg-german-red text-white px-5 py-3 rounded-full shadow-lg hover:bg-red-700 transition duration-300 z-50 text-sm font-semibold md:bottom-4 md:right-20" data-key="floatingTrialButton">Book a Trial Lesson</a>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
